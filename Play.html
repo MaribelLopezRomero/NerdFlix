@@ -10,35 +10,26 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:rgb(52, 58, 64)">
 
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: rgb(52, 58, 64);
+    .dropdown-menu {
+      background-color: rgb(33, 37, 41);
     }
 
-    .titulo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      border-radius: 10px;
-      padding-top: 18px;
-      padding-bottom: 18px;
-    }
-
-    .checklinea {
+    .colum {
       text-align: center;
+      vertical-align: top;
     }
 
-    .row {
-      margin-top: 4rem;
+    .parrafo{
+      text-align: justify;
     }
+
+    .dropdown dropend{
+      float: right;
+    }
+
   </style>
   <header>
     <!-- <li class="nav-item">
@@ -89,78 +80,58 @@
       </div>
     </nav>
   </header>
-  <!--CUERPO DEL DOCUMENTO-->
-  <main>
-    <div class="row">
-      <div class="col-lg-4 col-md-3 col-md-3"></div>
-      <!--FORMULARIO PARA ADMINISTRADOR PELICULAS Y SERIES-->
-      <form class="was-validated form col-lg-4 col-md-4 col-sm-12 bg-white" action="">
-        <h2 class="titulo">Añadir peliculas/series</h2>
-
-
-        <!--NOMBRE-->
-        <div>
-          <label for="nombre" class="form-label">Título: </label>
-          <input type="text" class="form-control" id="nombre" required />
-        </div>
-
-        <!--FECHA ESTRENO-->
-        <br>
-        <div>
-          Selecciona la fecha deseada:
-          <input type="date" name="fecha" required max="2022-05-10" />
-        </div>
-        <br>
-
-        <!--TEMPORADAS-->
-        <div>
-          <label for="nombre" class="form-label">Nº de temporadas: </label>
-          <input type="text" class="form-control" id="temporadas" required pattern="[0-9]{1,2}" />
-        </div>
-
-
-        <!--SINOPSIS-->
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Sinopsis</label>
-          <textarea class="form-control" id="sinopsis" rows="4" required></textarea>
-        </div>
-
-        <!--PELICULA/SERIE-->
-        <div class="checklinea">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" required type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label text-black" for="inlineRadio1" >Película</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" required type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label text-black" for="inlineRadio2" >Serie</label>
-          </div>
-        </div>
-
-        <!--URL IMAGEN-->
-        <br>
-        <div class="mb-3">
-          <label for="url">Link de la imagen </label>
-          <input type="url" name="urlimagen" required><br>
-        </div>
-
-        <!--URL IMAGEN-->
-        <div class="mb-3">
-          <label for="url">Link a trailer     </label>
-          <input type="url" name="urltrailer" required><br>
-        </div>
-
-        <br>
-        <button type="submit" class="btn" style="background-color: #2da38d">
-          Update
-        </button>
-        <br>
-        <br>
-      </form>
-      <br>
+  <div class="container p-5 my-5 border bg-white text-dark" >
+    <h2 class="text-dark">Origen</h2>
+    <div class="dropdown dropend" style="text-align: right">
+     
+     <button type="button" name="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown">Temporada</button>
+      <ul class="dropdown-menu text-white">
+        <li>Temporada 1</li>
+        <li>Temporada 2</li>
+        <li>Temporada 3</li>
+      </ul>
+      <button type="button" name="button" class="btn btn-danger" ><img src="images\corazon.png" width="20" height="20"></button>
     </div>
-  </main>
-
+    <table>
+      <tr>
+        <td rowspan="4" border="1" width="25%" height="50px" style="vertical-align:middle; text-align:center">
+          <img width="300" height="400" align="center" src="https://pics.filmaffinity.com/Origen-652954101-large.jpg"/>
+        </td>
+        <td class="colum" width="17%" height="50px" align="center"> Fecha de 
+          estreno:</td>
+        <td>
+          <!--poner fecha de estreno-->
+        </td>
+      </tr>
+      <tr>
+        <td class="colum" width="17%" height="50px" align="center">Género:
+        </td>
+        <td>
+          <!--poner GENERO-->
+        </td>
+      </tr>
+      <tr>
+        <td class="colum" width="17%" height="50px" align="center">Sinopsis:
+        </td>
+        <td>
+          <!--poner SINOPSIS--> <p class="parrafo">Dom Cobb (DiCaprio) es un experto en el arte de apropiarse, durante el sueño, de los
+          secretos del subconsciente ajeno. La extraña habilidad de Cobb le ha convertido en un hombre muy cotizado en el mundo
+          del espionaje, pero también lo ha condenado a ser un fugitivo y, por consiguiente, a renunciar a llevar una
+          vida normal. Su única oportunidad para cambiar de vida será hacer exactamente lo contrario de lo que ha
+          hecho siempre: la incepción, que consiste en implantar una idea en el subconsciente en lugar de sustraerla.
+          Sin embargo, su plan se complica debido a la intervención de alguien que parece predecir cada uno de sus
+          movimientos, alguien a quien sólo Cobb podrá descubrir</p>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          
+        </td>
+      </tr>
+      <br>
+      <br>
+    </table>
+  </div>
 </body>
 
 <!-- FOOTER -->
