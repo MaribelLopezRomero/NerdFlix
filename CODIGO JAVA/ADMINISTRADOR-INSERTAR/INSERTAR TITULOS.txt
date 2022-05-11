@@ -1,0 +1,488 @@
+ALTATITULO.HTML
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+	<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgb(52, 58, 64);
+}
+
+.titulo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+
+.checklinea {
+	text-align: center;
+}
+
+.row {
+	margin-top: 4rem;
+}
+</style>
+	<header>
+		<!-- <li class="nav-item">
+          <a href="" class="nav-link active"> </a> <img src="image 1.png" alt="">
+        </li> -->
+		<nav
+			class="navbar navbar-expand-sm navbar-dark d-flex justify-content-between">
+			<div class="ps-5">
+				<a href="Home.html"><img src="images/logo.png" alt=""
+					width="200" height="" /></a>
+			</div>
+
+			<ul class="navbar-nav">
+				<li class="nav-item"><a href="Home.html" class="nav-link">Home</a>
+				</li>
+				<li class="nav-item"><a href="Peliculas.html" class="nav-link">Peliculas</a>
+				</li>
+				<li class="nav-item"><a href="Series.html" class="nav-link">Series</a>
+				</li>
+				<li class="nav-item"><a href="#"><i
+						class="fas fa-search sub-nav-logo"></i></a></li>
+				<div class="dropdown">
+					<button class="btn btn-dark" type="button" id="dropdownMenuButton2"
+						data-bs-toggle="dropdown" aria-expanded="false">
+						Favoritos</button>
+					<ul class="dropdown-menu dropdown-menu-dark"
+						aria-labelledby="dropdownMenuButton2">
+						<li><a class="dropdown-item" href="#">Series</a></li>
+						<li><a class="dropdown-item" href="#">Películas</a></li>
+					</ul>
+				</div>
+				<div class="dropdown">
+					<button class="btn btn-dark" type="button" id="dropdownMenuButton2"
+						data-bs-toggle="dropdown" aria-expanded="false">En
+						reproducción</button>
+					<ul class="dropdown-menu dropdown-menu-dark"
+						aria-labelledby="dropdownMenuButton2">
+						<li><a class="dropdown-item" href="#">Series</a></li>
+						<li><a class="dropdown-item" href="#">Películas</a></li>
+					</ul>
+				</div>
+			</ul>
+			<div>
+				<img class="nav-link active btn btn-outline-light btn-floating m-1"
+					src="images/PerfilSF.png" alt="" width="60" height="" />
+			</div>
+		</nav>
+	</header>
+	<!--CUERPO DEL DOCUMENTO-->
+	<main>
+		<div class="row">
+			<div class="col-lg-4 col-md-3 col-md-3"></div>
+			<!--FORMULARIO PARA ADMINISTRADOR PELICULAS Y SERIES-->
+			<form class="was-validated form col-lg-4 col-md-4 col-sm-12 bg-white"
+				action="ServletForm" method="POST">
+				<h2 class="titulo">Añadir peliculas/series</h2>
+
+
+				<!--NOMBRE-->
+				<div>
+					<label for="nombre" class="form-label">Título: </label> <input
+						type="text" class="form-control" name="nombre" id="nombre"
+						required />
+				</div>
+
+				<!--FECHA ESTRENO-->
+				<br>
+				<div>
+					Selecciona la fecha de estreno: <input type="date" name="fecha"
+						required max="2022-05-10" />
+				</div>
+				<br>
+
+				<!--GENERO-->
+				<div>
+					<label for="nombre" class="form-label">Género: </label> <input
+						type="text" class="form-control" id="temporadas" name="genero" />
+				</div>
+
+				<!--TEMPORADAS-->
+				<div>
+					<label for="nombre" class="form-label">Nº de temporadas: </label> <input
+						type="text" class="form-control" id="temporadas" name="temporadas"
+						required pattern="[0-9]{1,2}" />
+				</div>
+
+
+				<!--SINOPSIS-->
+				<div class="mb-3">
+					<label for="exampleFormControlTextarea1" class="form-label">Sinopsis</label>
+					<textarea class="form-control" id="sinopsis" name="sinopsis" rows="4" required
+						maxlength="400"></textarea>
+				</div>
+
+				<!--PELICULA/SERIE-->
+				<div class="checklinea">
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" required type="radio"
+							name="tipo" id="inlineRadio1" value="option1">
+						<label class="form-check-label text-black" for="inlineRadio1">Película</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" required type="radio"
+							name="tipo" id="inlineRadio2" value="option2">
+						<label class="form-check-label text-black" for="inlineRadio2">Serie</label>
+					</div>
+				</div>
+
+				<!--URL IMAGEN-->
+				<br>
+				<div class="mb-3">
+					<label for="url">Link de la imagen </label> <input type="url"
+						name="urlimagen" required><br>
+				</div>
+
+				<!--URL IMAGEN-->
+				<div class="mb-3">
+					<label for="url">Link a trailer </label> <input type="url"
+						name="urltrailer" required><br>
+				</div>
+
+				<br>
+				<button type="submit" class="btn" style="background-color: #2da38d">
+					Update</button>
+				<br> <br>
+			</form>
+			<br>
+		</div>
+	</main>
+
+</body>
+
+<!-- FOOTER -->
+<footer class=" text-center text-white">
+	<div class="container p-4">
+		<!-- REDES SOCIALES -->
+		<section class="mb-4">
+			<!-- Google -->
+			<img class="btn btn-outline-light btn-floating m-1"
+				src="images/Google.png" width="60" role="button"><i
+				class="fab fa-facebook-f"></i></img>
+
+			<!-- Facebook -->
+			<img class="btn btn-outline-light btn-floating m-1"
+				src="images/Facebook.png" width="60" role="button"><i
+				class="fab fa-twitter"></i></img>
+
+			<!-- Twitter -->
+			<img class="btn btn-outline-light btn-floating m-1"
+				src="images/Twitter.png" width="60" role="button"><i
+				class="fab fa-google"></i></img>
+
+			<!-- Instagram -->
+			<img class="btn btn-outline-light btn-floating m-1"
+				src="images/Instagram.png" width="60" role="button"><i
+				class="fab fa-instagram"></i></img>
+
+			<!-- Linkedin -->
+			<img class="btn btn-outline-light btn-floating m-1"
+				src="images/LinkedIn.png" width="60" role="button"><i
+				class="fab fa-linkedin-in"></i></img>
+
+			<!-- Github -->
+			<img class="btn btn-outline-light btn-floating m-1"
+				src="images/GitHub.png" width="60" role="button"><i
+				class="fab fa-github"></i></img>
+		</section>
+
+		<!-- TEXTO FOOTER -->
+		<section class="mb-4">
+			<p>Por si quieres saber algo más de nosotros o informarte sobre
+				los términos de uso o de privacidad</p>
+		</section>
+
+		<!-- LINKS FOOTER -->
+		<section class="">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+					<ul class="list-unstyled mb-0">
+						<li><a href="#!" class="text-white">Acerca nuestra</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+					<h5 class="text-uppercase">Links</h5>
+
+					<ul class="list-unstyled mb-0">
+						<li><a href="#!" class="text-white">Privacidad</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+					<ul class="list-unstyled mb-0">
+						<li><a href="#!" class="text-white">Contáctanos</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+					<ul class="list-unstyled mb-0">
+						<li><a href="#!" class="text-white">Términos de Uso</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- Copyright -->
+	<div class="text-center p-3"
+		style="background-color: rgba(0, 153, 117, 0.5);">© 2022:
+		Alejandro Barba, Belén Cao, Maribel López</div>
+</footer>
+
+</html>
+
+
+-------------X-------------
+
+SERVLETFORM.JAVA
+
+private static void altaTitulo(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		/** 1- recogida de datos */
+		Titulos titulo = new Titulos(request.getParameter("nombre"), request.getParameter("genero"),
+				request.getParameter("fecha_estreno"), request.getParameter("temporadas"),
+				request.getParameter("sinopsis"), request.getParameter("tipo"), request.getParameter("imagen"),
+				request.getParameter("trailer"));
+
+		/** 2- Insertar jugador en la base de datos */
+		boolean bRes = Controller.insertarTitulos(titulo);
+
+		/** 3- Mostrar resultado por pantalla */
+		if (bRes) {
+			response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			out.println("<HTML>\n" + "<HEAD><TITLE>Página de JAGD</TITLE>" + "  <meta charset=\"utf-8\">\r\n"
+					+ "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n"
+					+ "  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\r\n"
+					+ "  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\"></script>\r\n"
+					+ "</HEAD>\n" + "<BODY>\n" + "<div class=\"container mt-3\">\n"
+					+ "<h2 class=\"text-success\">Jugador insertado correctamente<h2>\n"
+					+ "<ul class=\"list-group\"> \n" + "  <LI class=\"list-group-item\">nombre: " + titulo.getNombre()
+					+ "</li>\n" + "  <LI class=\"list-group-item\">procedencia: " + titulo.getGenero() + "</li>\n"
+					+ "  <LI class=\"list-group-item\">altura: " + titulo.getFecha_estreno() + "</li>\n"
+					+ "  <LI class=\"list-group-item\">peso: " + titulo.getTemporadas() + "</li>\n"
+					+ "  <LI class=\"list-group-item\">posicion: " + titulo.getSinopsis() + "</li>\n"
+					+ "  <LI class=\"list-group-item\">nombre_equipo: " + titulo.getTipo() + "</li>\n"
+					+ "  <LI class=\"list-group-item\">posicion: " + titulo.getImagen() + "</li>\n"
+					+ "  <LI class=\"list-group-item\">nombre_equipo: " + titulo.getTrailer() + "</li>\n"
+					+ "</UL>\n" + "</div></BODY></HTML>");
+			out.close();
+
+		} else {
+			// Mostramos que se ha producido un error
+			mostrarError(response);
+
+		}
+	}
+
+
+-------------X-------------
+
+
+TITULOS.JAVA
+
+package com.model;
+
+/**
+ * @author BelenCao
+ * Creación de la clase Jugadores
+ *
+ */
+public class Titulos {
+
+	/**1.-DECLARAMOS LAS VARIABLES**/
+	private String nombre;
+	private String genero;
+	private String fecha_estreno;
+	private String temporadas;
+	private String sinopsis;
+	private String tipo;
+	private String imagen;
+	private String trailer;
+	
+	/**2.-CONSTRUCTOR**/
+	public Titulos(String nombre, String genero, String fecha_estreno, String temporadas, String sinopsis, String tipo,
+			String imagen, String trailer) {
+		super();
+		this.nombre = nombre;
+		this.genero = genero;
+		this.fecha_estreno = fecha_estreno;
+		this.temporadas = temporadas;
+		this.sinopsis = sinopsis;
+		this.tipo = tipo;
+		this.imagen = imagen;
+		this.trailer = trailer;
+	}
+	
+
+	/**3.-GETTERS AND SETTERS**/
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+
+	public String getFecha_estreno() {
+		return fecha_estreno;
+	}
+
+
+	public void setFecha_estreno(String fecha_estreno) {
+		this.fecha_estreno = fecha_estreno;
+	}
+
+
+	public String getTemporadas() {
+		return temporadas;
+	}
+
+
+	public void setTemporadas(String temporadas) {
+		this.temporadas = temporadas;
+	}
+
+
+	public String getSinopsis() {
+		return sinopsis;
+	}
+
+
+	public void setSinopsis(String sinopsis) {
+		this.sinopsis = sinopsis;
+	}
+
+
+	public String getTipo() {
+		return tipo;
+	}
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+
+	public String getImagen() {
+		return imagen;
+	}
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
+	public String getTrailer() {
+		return trailer;
+	}
+
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
+	}
+	
+	
+	
+	/**4.-CREAMOS METODO TOSTRING QUE MUESTRE LOS VALORES**/
+	public String toString() {
+		StringBuffer sbResultado = new StringBuffer();
+		sbResultado.append(nombre);
+		sbResultado.append(", ");
+		sbResultado.append(genero);
+		sbResultado.append(", ");
+		sbResultado.append(fecha_estreno);
+		sbResultado.append(", ");
+		sbResultado.append(temporadas);
+		sbResultado.append(", ");
+		sbResultado.append(sinopsis);
+		sbResultado.append(", ");
+		sbResultado.append(tipo);
+		sbResultado.append(", ");
+		sbResultado.append(imagen);
+		sbResultado.append(", ");
+		sbResultado.append(trailer);
+
+		return sbResultado.toString();
+	}
+
+
+	
+	
+	
+}
+
+
+
+
+-------------X-------------
+
+CONTROLLER 
+
+
+public static boolean insertarTitulos(Titulos titulo) {
+		boolean bRes = true;
+		//**1-conectar a la BBDD**/
+		
+		ConexionBBDD miConn = new ConexionBBDD();
+		
+		try {
+			/**2-obtener conexion**/
+			miConn.conectar();
+			//**3-insertar jugador**/
+			int iRes = miConn.insertarTitulo(titulo);
+			System.out.println("Resultado de insertar titulo = " +iRes);
+		}
+		catch (SQLException sqlex) {
+			System.out.println("Error******" + sqlex.getMessage());
+			sqlex.printStackTrace();
+		}
+		
+		finally {
+			//DESCONECTAR LA BBDD ES MUY IMPORTANTE
+			miConn.desconectar();
+		}
+		
+		return bRes;
+	}
+
+
+
