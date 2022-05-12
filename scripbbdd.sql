@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `capitulos` (
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
 
-	`cod_usuario` int(4) NOT NULL,
+	`cod_usuario` int(4) NOT NULL AUTO_INCREMENT,
 	`nombre` varchar(20) DEFAULT NULL,
 	`password` varchar(20) DEFAULT NULL,
 	`correo` varchar(20) DEFAULT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 CREATE TABLE IF NOT EXISTS `reproduciendo` (
 
-	`cod_usuario` int(4) NOT NULL AUTO_INCREMENT,
+	`cod_usuario` int(4) NOT NULL,
 	`cod_titulo` int(4) NOT NULL,
 	`cod_temporada` int(2) NOT NULL,
 	`cod_capitulo` int(4) NOT NULL,
