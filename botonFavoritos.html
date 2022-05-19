@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .boton {
+        background-color: white;
+      }
+      .boton1 {
+        background-color: red;
+      }
+    </style>
+
+    <button class="boton js-boton">favoritos</button>
+  </body>
+
+  <script>
+    const boton = document.querySelector(".js-boton");
+    function cambiarColor() {
+      boton.classList.toggle("boton1");
+    }
+
+    boton.addEventListener("click", cambiarColor);
+  </script>
+</html>
