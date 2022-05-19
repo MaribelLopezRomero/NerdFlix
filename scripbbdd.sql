@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `favoritos` (
 	`cod_titulo` int(4) NOT NULL,
 	PRIMARY KEY (`cod_usuario`, `cod_titulo`),
  	FOREIGN KEY (`cod_usuario`) REFERENCES usuarios(`cod_usuario`),
- 	FOREIGN KEY (`cod_titulo`) REFERENCES capitulos(`cod_titulo`)
+ 	FOREIGN KEY (`cod_titulo`) REFERENCES titulos(`cod_titulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
